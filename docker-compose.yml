@@ -1,0 +1,19 @@
+services:
+  esp-idf:
+    build: .
+    image: esp32-zigbee-dev:v1
+    container_name: esp32-zigbee-dev
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/workspace
+      - esp-idf-ccache:/root/.ccache
+    environment:
+      IDF_CCACHE_ENABLE: "1"
+# Uncomment if the serial device is visible on our linux/wsl
+#    devices:
+#      - /dev/ttyACM0:/dev/ttyACM0
+
+volumes:
+  esp-idf-ccache:
