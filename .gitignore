@@ -1,0 +1,13 @@
+# ESP-IDF build output
+build/
+managed_components/
+
+# Logs
+*.log
+
+# Binary and compiled files
+*.bin
+*.elf
+*.map
+*.a
+*.o
