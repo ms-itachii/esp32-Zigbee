@@ -1,0 +1,3 @@
+[submodule "esp-zigbee-sdk"]
+	path = esp-zigbee-sdk
+	url = https://github.com/espressif/esp-zigbee-sdk.git
