@@ -52,7 +52,7 @@ esp32-zigbee/
 This repo contains a submodule (`esp-zigbee-sdk`). A regular `git clone` will leave that folder **empty**. You must initialize the submodule after cloning.
 
 ```bash
-git clone --recurse-submodules git@github.com:ms-itachii/esp32-Zigbee.git
+git clone --recurse-submodules https://github.com/ms-itachii/esp32-Zigbee.git
 ```
 
 ## Start the Environment
@@ -63,6 +63,7 @@ From the repo root on your host (Docker Desktop must be running):
 docker compose build          # only needed once, or after Dockerfile changes
 docker compose run --rm esp-idf bash
 ```
+> You might need to give the user permissions, to do so run `sudo usermod -aG docker $USER` and the restart WSL session.
 
 You are now inside the container. Your repo is mounted at `/workspace/`.
 
@@ -100,7 +101,7 @@ Key settings to verify:
 
 ```
 Component config → Zigbee → Enable Zigbee stack       ← must be enabled
-Component config → Zigbee → Zigbee device role        ← ZED / ZC / ZR
+Component config → Zigbee → Zigbee device role        ← ZED/ZC/ZR (ZED for this example)
 Partition Table  → Partition Table → Custom           ← point to partitions.csv
 Serial flasher config → Flash size                    ← match your board
 ```
